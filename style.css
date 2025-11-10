@@ -40,6 +40,12 @@ textarea {
     resize: vertical;
 }
 
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
 .nav-buttons {
     display: flex;
     justify-content: space-between;
