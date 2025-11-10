@@ -1,23 +1,26 @@
-let currentPage = 1;
+let currentPage = 'page1';
 showPage(currentPage);
 
-function showPage(pageNum) {
+function showPage(pageId) {
     const pages = document.querySelectorAll('.page');
     pages.forEach(page => page.classList.remove('active'));
-    document.getElementById('page'+pageNum).classList.add('active');
-    currentPage = pageNum;
+    document.getElementById(pageId).classList.add('active');
+    currentPage = pageId;
 }
 
-function nextPage(pageNum) {
-    showPage(pageNum);
+function nextPage(pageId) {
+    showPage(pageId);
 }
 
-function prevPage(pageNum) {
-    showPage(pageNum);
+function prevPage(pageId) {
+    showPage(pageId);
 }
 
 function showCV() {
-    // نقل البيانات إلى الـ CV
+    // بيانات النوع
+    const gender = document.querySelector('input[name="gender"]:checked').value;
+
+    // باقي البيانات
     const name = document.getElementById('name').value;
     const dob = document.getElementById('dob').value;
     const phone = document.getElementById('phone').value;
@@ -43,7 +46,7 @@ function showCV() {
         cvPhoto.src = URL.createObjectURL(photoInput.files[0]);
     }
 
-    document.getElementById('cvName').innerText = name;
+    document.getElementById('cvName').innerText = `${name} (${gender})`;
     document.getElementById('cvContact').innerText = `${dob} | ${phone} | ${email}`;
     document.getElementById('cvAddress').innerText = `${address} | ${nationality} | ${status}`;
     document.getElementById('cvEducation').innerText = `${education} | ${experience}`;
