@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مولد سي دي — مشاركة وحفظ</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>مولد ملصق سي دي</h1>
+      <p class="muted">أدخل البيانات ثم حمّل الملصق أو شاركه عبر واتساب</p>
+    </header>
+
+    <section class="form-card card">
+      <div class="row">
+        <label>الصورة الشخصية</label>
+        <input id="profileFile" type="file" accept="image/*">
+      </div>
+
+      <div class="row two-cols">
+        <div>
+          <label>الاسم الكامل</label>
+          <input id="name" type="text" placeholder="مثال: أحمد علي">
+        </div>
+        <div>
+          <label>الهاتف</label>
+          <input id="phone" type="text" placeholder="مثال: 201234567890">
+        </div>
+      </div>
+
+      <div class="row two-cols">
+        <div>
+          <label>المهنة</label>
+          <input id="job" type="text" placeholder="مثال: طالب">
+        </div>
+        <div>
+          <label>تاريخ الميلاد / العمر</label>
+          <input id="dob" type="text" placeholder="مثال: 1990">
+        </div>
+      </div>
+
+      <div class="row">
+        <label>ملاحظات / هوايات</label>
+        <input id="notes" type="text" placeholder="مثال: يحب الموسيقى">
+      </div>
+
+      <div class="row">
+        <label>أرقام واتساب (أدخل رقم ثم اضغط إضافة)</label>
+        <div class="wh-input">
+          <input id="whInput" type="text" placeholder="بدون + أو رموز، مثال: 201234567890">
+          <button id="addWhatsBtn" class="btn">أضف</button>
+        </div>
+        <div id="whList" class="wh-list"></div>
+      </div>
+
+      <div class="row actions">
+        <button id="addToList" class="btn primary">أضف للقائمة</button>
+        <button id="clearForm" class="btn muted">مسح الحقول</button>
+      </div>
+    </section>
+
+    <section class="card list-section">
+      <h2>معاينات الملصقات</h2>
+      <div id="cards" class="cards-grid"></div>
+    </section>
+
+    <footer class="muted center">ملف HTML + CSS + JS منفصلان. حفظ/مشاركة تعمل بدون خادم.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
