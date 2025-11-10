@@ -9,27 +9,44 @@
 <body>
 <div class="container">
 
-    <!-- الصفحات -->
+    <!-- الصفحة 1: معلومات شخصية -->
     <div class="page" id="page1">
         <h2>الصفحة 1: معلومات شخصية</h2>
         <input type="text" id="name" placeholder="الاسم الكامل">
         <input type="file" id="photo" accept="image/*">
         <div class="nav-buttons">
+            <button onclick="nextPage('pageGender')">التالي</button>
+        </div>
+    </div>
+
+    <!-- صفحة اختيار النوع -->
+    <div class="page" id="pageGender">
+        <h2>اختر النوع</h2>
+        <label>
+            <input type="radio" name="gender" value="ذكر" checked> ذكر
+        </label>
+        <label>
+            <input type="radio" name="gender" value="أنثى"> أنثى
+        </label>
+        <div class="nav-buttons">
+            <button onclick="prevPage(1)">السابق</button>
             <button onclick="nextPage(2)">التالي</button>
         </div>
     </div>
 
+    <!-- الصفحة 2: بيانات الاتصال -->
     <div class="page" id="page2">
         <h2>الصفحة 2: بيانات الاتصال</h2>
         <input type="date" id="dob" placeholder="تاريخ الميلاد">
         <input type="text" id="phone" placeholder="رقم الهاتف">
         <input type="email" id="email" placeholder="البريد الإلكتروني">
         <div class="nav-buttons">
-            <button onclick="prevPage(1)">السابق</button>
+            <button onclick="prevPage('pageGender')">السابق</button>
             <button onclick="nextPage(3)">التالي</button>
         </div>
     </div>
 
+    <!-- الصفحة 3: معلومات إضافية -->
     <div class="page" id="page3">
         <h2>الصفحة 3: معلومات إضافية</h2>
         <input type="text" id="address" placeholder="العنوان">
@@ -41,6 +58,7 @@
         </div>
     </div>
 
+    <!-- الصفحة 4: المؤهل والخبرات -->
     <div class="page" id="page4">
         <h2>الصفحة 4: المؤهل والخبرات</h2>
         <input type="text" id="education" placeholder="المؤهل الدراسي">
@@ -51,6 +69,7 @@
         </div>
     </div>
 
+    <!-- الصفحة 5: المهارات واللغات -->
     <div class="page" id="page5">
         <h2>الصفحة 5: المهارات واللغات</h2>
         <input type="text" id="skills" placeholder="المهارات">
@@ -62,6 +81,7 @@
         </div>
     </div>
 
+    <!-- الصفحة 6: الرقم القومي -->
     <div class="page" id="page6">
         <h2>الصفحة 6: الرقم القومي (اختياري)</h2>
         <input type="text" id="idNumber" placeholder="الرقم القومي">
@@ -72,6 +92,7 @@
         </div>
     </div>
 
+    <!-- الصفحة 7: الحسابات الاجتماعية -->
     <div class="page" id="page7">
         <h2>الصفحة 7: الحسابات الاجتماعية</h2>
         <input type="text" id="facebook" placeholder="فيسبوك">
