@@ -1,106 +1,111 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>NEGM — مولد CV / سي دي</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مولد CV احترافي</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <header class="top">
-      <div class="brand">
-        <div class="logo">ن</div>
-        <div>
-          <h1>NEGM</h1>
-          <div class="subtitle">مولد سيرة ذاتية — تصميم فخم</div>
+<div class="container">
+
+    <!-- الصفحات -->
+    <div class="page" id="page1">
+        <h2>الصفحة 1: معلومات شخصية</h2>
+        <input type="text" id="name" placeholder="الاسم الكامل">
+        <input type="file" id="photo" accept="image/*">
+        <div class="nav-buttons">
+            <button onclick="nextPage(2)">التالي</button>
         </div>
-      </div>
-    </header>
+    </div>
 
-    <main class="layout">
-      <section class="panel form-panel card">
-        <h2>بيانات الشخص</h2>
-
-        <label>الصورة الشخصية (مربع)</label>
-        <input id="profileFile" type="file" accept="image/*">
-
-        <div class="two">
-          <div>
-            <label>الاسم الكامل</label>
-            <input id="name" type="text" placeholder="مثال: أحمد علي">
-          </div>
-          <div>
-            <label>الوظيفة</label>
-            <input id="job" type="text" placeholder="مثال: مدير مبيعات">
-          </div>
+    <div class="page" id="page2">
+        <h2>الصفحة 2: بيانات الاتصال</h2>
+        <input type="date" id="dob" placeholder="تاريخ الميلاد">
+        <input type="text" id="phone" placeholder="رقم الهاتف">
+        <input type="email" id="email" placeholder="البريد الإلكتروني">
+        <div class="nav-buttons">
+            <button onclick="prevPage(1)">السابق</button>
+            <button onclick="nextPage(3)">التالي</button>
         </div>
+    </div>
 
-        <div class="two">
-          <div>
-            <label>الهاتف</label>
-            <input id="phone" type="text" placeholder="مثال: 201234567890">
-          </div>
-          <div>
-            <label>البريد الإلكتروني</label>
-            <input id="email" type="text" placeholder="مثال: a@example.com">
-          </div>
+    <div class="page" id="page3">
+        <h2>الصفحة 3: معلومات إضافية</h2>
+        <input type="text" id="address" placeholder="العنوان">
+        <input type="text" id="nationality" placeholder="الجنسية">
+        <input type="text" id="status" placeholder="الحالة الاجتماعية">
+        <div class="nav-buttons">
+            <button onclick="prevPage(2)">السابق</button>
+            <button onclick="nextPage(4)">التالي</button>
         </div>
+    </div>
 
-        <label>نبذة قصيرة</label>
-        <textarea id="bio" rows="3" placeholder="نبذة عنك"></textarea>
-
-        <label>المهارات (مفصولة بفواصل)</label>
-        <input id="skills" placeholder="مثال: Photoshop, Excel, التسويق">
-
-        <div class="date-row">
-          <div>
-            <label>سنة الميلاد</label>
-            <select id="year"></select>
-          </div>
-          <div>
-            <label>شهر</label>
-            <select id="month"></select>
-          </div>
-          <div>
-            <label>يوم</label>
-            <select id="day"></select>
-          </div>
+    <div class="page" id="page4">
+        <h2>الصفحة 4: المؤهل والخبرات</h2>
+        <input type="text" id="education" placeholder="المؤهل الدراسي">
+        <textarea id="experience" placeholder="الخبرات"></textarea>
+        <div class="nav-buttons">
+            <button onclick="prevPage(3)">السابق</button>
+            <button onclick="nextPage(5)">التالي</button>
         </div>
+    </div>
 
-        <label>أرقام واتساب (أدخل رقم ثم اضغط إضافة)</label>
-        <div class="wh-input">
-          <input id="whInput" placeholder="201234567890">
-          <button id="addWhats" class="btn">أضف</button>
+    <div class="page" id="page5">
+        <h2>الصفحة 5: المهارات واللغات</h2>
+        <input type="text" id="skills" placeholder="المهارات">
+        <input type="text" id="languages" placeholder="اللغات">
+        <input type="text" id="whatsapp" placeholder="رابط واتساب">
+        <div class="nav-buttons">
+            <button onclick="prevPage(4)">السابق</button>
+            <button onclick="nextPage(6)">التالي</button>
         </div>
-        <div id="whList" class="wh-list"></div>
+    </div>
 
-        <div class="actions">
-          <button id="previewBtn" class="btn primary">إنشاء معاينة CV</button>
-          <button id="clearBtn" class="btn muted">مسح الحقول</button>
+    <div class="page" id="page6">
+        <h2>الصفحة 6: الرقم القومي (اختياري)</h2>
+        <input type="text" id="idNumber" placeholder="الرقم القومي">
+        <div class="nav-buttons">
+            <button onclick="prevPage(5)">السابق</button>
+            <button onclick="nextPage(7)">التالي</button>
+            <button onclick="nextPage(7)">تخطي</button>
         </div>
-      </section>
+    </div>
 
-      <section class="panel preview-panel card">
-        <h2>معاينة وحفظ</h2>
-        <div id="cvPreviewContainer" class="cv-preview-wrap">
-          <!-- سيتم توليد المعاينة هنا -->
+    <div class="page" id="page7">
+        <h2>الصفحة 7: الحسابات الاجتماعية</h2>
+        <input type="text" id="facebook" placeholder="فيسبوك">
+        <input type="text" id="instagram" placeholder="إنستجرام">
+        <input type="text" id="tiktok" placeholder="تيك توك">
+        <input type="text" id="youtube" placeholder="يوتيوب">
+        <div class="nav-buttons">
+            <button onclick="prevPage(6)">السابق</button>
+            <button onclick="showCV()">عرض الـ CV</button>
         </div>
+    </div>
 
-        <div class="actions" style="margin-top:12px">
-          <button id="downloadBtn" class="btn download">حفظ كصورة PNG</button>
-          <button id="shareBtn" class="btn primary">مشاركة (واتساب / مشاركة الهاتف)</button>
+    <!-- صفحة الـ CV النهائي -->
+    <div class="page" id="finalCV">
+        <h2>الـ CV النهائي</h2>
+        <div id="cvCard" class="cv-card">
+            <img id="cvPhoto" src="" alt="الصورة الشخصية">
+            <h3 id="cvName"></h3>
+            <p id="cvContact"></p>
+            <p id="cvAddress"></p>
+            <p id="cvEducation"></p>
+            <p id="cvSkills"></p>
+            <p id="cvLinks"></p>
         </div>
-
-        <div class="note muted" style="margin-top:10px">
-          ملاحظة: المشاركة المباشرة للصورة تعمل في متصفحات/هواتف تدعم Web Share API للصور. وإلا سيفتح واتساب مع نص جاهز.
+        <div class="nav-buttons">
+            <button onclick="prevPage(7)">السابق</button>
+            <button id="downloadBtn">حفظ كصورة</button>
+            <button id="whatsappBtn">مشاركة واتساب</button>
         </div>
-      </section>
-    </main>
+    </div>
 
-    <footer class="footer muted">احفظ الملفات محلياً. العمل بدون خادم.</footer>
-  </div>
+</div>
 
-  <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
