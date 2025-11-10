@@ -1,0 +1,48 @@
+:root{
+  --bg:#0f1724;
+  --card:#0f2336;
+  --accent:#06b66a; /* أخضر واتساب واضح */
+  --accent2:#ffb86b;
+  --muted:#9fb0bf;
+  --text:#e6f0f2;
+  --glass: rgba(255,255,255,0.03);
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: "Almarai", system-ui, Arial;direction:rtl;background:linear-gradient(180deg,#081021 0%,#0b1520 100%);color:var(--text)}
+.container{max-width:1100px;margin:20px auto;padding:18px}
+header{margin-bottom:12px}
+h1{margin:0;font-size:22px}
+.muted{color:var(--muted);font-size:13px;margin-top:6px}
+.card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));border-radius:var(--radius);padding:14px;box-shadow:0 10px 30px rgba(2,6,23,0.6);margin-bottom:16px}
+.form-card label{display:block;font-size:13px;margin-bottom:6px}
+.row{margin-bottom:10px}
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input[type=text], input[type=file]{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);outline:none}
+.wh-input{display:flex;gap:8px}
+.btn{padding:9px 12px;border-radius:10px;border:0;cursor:pointer;background:var(--glass);color:var(--text)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#04a75a);box-shadow:0 8px 20px rgba(6,182,106,0.12)}
+.btn.muted{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+.actions{display:flex;gap:10px}
+.list-section h2{margin:0 0 10px 0}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.cd-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);border-radius:12px;padding:12px;display:flex;gap:12px;align-items:center;position:relative}
+.preview{width:160px;height:160px;border-radius:50%;background:linear-gradient(180deg,#0b1116,#0b1b23);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;flex-shrink:0}
+.preview img{width:100%;height:100%;object-fit:cover}
+.cd-info{flex:1}
+.cd-info h3{margin:0;font-size:18px}
+.cd-info p{margin:6px 0;color:var(--muted);font-size:13px}
+.wh-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.wh-badge{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.04);cursor:pointer;border:2px solid transparent}
+.wh-badge.green{background:linear-gradient(180deg,#06b66a,#049a50);box-shadow:0 6px 18px rgba(4,151,80,0.14)}
+.wh-badge svg{width:20px;height:20px;fill:#fff}
+.card-actions{display:flex;gap:8px;position:absolute;right:12px;bottom:12px}
+.small-btn{padding:8px 10px;border-radius:8px;border:0;cursor:pointer;background:rgba(255,255,255,0.04);color:var(--text)}
+.download-btn{background:linear-gradient(90deg,var(--accent2),#ff9c57)}
+.center{text-align:center}
+
+/* responsive */
+@media(max-width:720px){
+  .two-cols{grid-template-columns:1fr}
+  .preview{width:120px;height:120px}
+}
